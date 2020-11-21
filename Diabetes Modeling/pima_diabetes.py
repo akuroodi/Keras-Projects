@@ -35,7 +35,7 @@ y = dataset[:,-1]        # all rows but just with last col
 Define and compile a Keras model. 
 Use Sequential class to add layers one at a time
 
-For this diabetes dataset we will use 2 fully connected layers and one softmax output layer
+For this diabetes dataset we will use 2 fully connected layers and one sigmoid output layer
 
 """
 
@@ -52,3 +52,4 @@ model.fit(X, y, epochs=150, batch_size=10)
 _, accuracy = model.evaluate(X,y) # evaluate function returns 2 value list, first element is loss which we discard
 
 print('Accuracy for classifying diabetes is: %.2f ' % (accuracy*100) )
+
