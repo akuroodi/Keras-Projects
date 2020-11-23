@@ -54,5 +54,14 @@ def FlowerModel():
     return model
 
 
+estimator = KerasClassifier(build_fn=FlowerModel, epochs=200, batch_size=10, verbose=0)
 
+kfold = KFold(n_splits=10, shuffle=True)
+
+# Evaluate our model with dataset
+
+results = cross_val_score(estimator, X, y=dummy_y, cv=kfold)
+ 
+
+print("Baseline: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 
