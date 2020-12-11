@@ -19,7 +19,7 @@ Each patient has following 8 attributes, and output is 9th attribute:
 """
 
 import numpy as np
-from keras.models import Sequential     # for linear stack of layers
+from keras.models import Sequential     # for daisy chained model (each layer has 1 I/O tensor)
 from keras.layers import Dense          # for densely connected NN layers
 
 
