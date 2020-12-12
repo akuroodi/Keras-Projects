@@ -1,6 +1,7 @@
 """
 DIFFERENT FROM V1:
-- Adding grid search to optimize hyperparamters such as batch size, epochs, etc.
+- Applying grid search to optimize hyperparamters such as batch size, epochs
+- Applying grid search to run a sweep of optimizer functions to find the best fit 
 
 Will use Pima Indians dataset from UCI that describes patient's onset of diabetes (0 or 1)
 
@@ -43,7 +44,6 @@ y = dataset[:,-1]        # all rows but just with last col
 def pimaModel_model_sweep(optimizer='adam'):
     model = Sequential();
     model.add(Dense(12, activation="relu", input_dim=8))     # 12 nodes with 8 input cols
-    model.add(Dense(8, activation='relu'))
     model.add(Dense(1,activation='sigmoid'))
 
     # NOTE: compile model with configurable optimzer to sweep through available choices in Keras
